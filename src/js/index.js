@@ -8,7 +8,6 @@ import "../styles/index.css";
 //import your own components
 import SecondsCounter from "./component/SecondsCounter.jsx";
 
-const root = ReactDOM.createRoot(document.getElementById("app"));
 
 let counter = 0;
 
@@ -20,14 +19,6 @@ setInterval(() => {
   const two = Math.floor(counter / 10) % 10;
   const one = Math.floor(counter / 1) % 10;
   counter++;
-  root.render(
-    <SecondsCounter
-      digitOne={one}
-      digitTwo={two}
-      digitThree={three}
-      digitFour={four}
-      digitFive={five}
-      digitSix={six}
-    />
-  );
+  ReactDOM.createRoot(document.getElementById('app')).render(<SecondsCounter digitSix={six} digitFive={five} digitFour={four} digitThree={three}
+    digitTwo={two} digitOne={one} />);
 }, 1000);
